@@ -3,6 +3,10 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
+        ndk{//选择要添加的对应cpu类型的.so库。这里添加几个以及那几个根据你libs下面的.so文件夹，两个地方保持一致就可以了
+             abiFilters'armeabi','armeabi-v7a','armeabi-v8a','x86', 'x86_64', 'mips', 'mips64'}
+
+
         applicationId "com.example.coolweather"
         minSdkVersion 21
         targetSdkVersion 28
@@ -25,8 +29,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'org.litepal.android:java:3.0.0'
-    implementation 'com.squareup.okhttp3:okhttp:3.14.2'
+    implementation 'org.litepal.android:core:1.4.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.5.0'
 
